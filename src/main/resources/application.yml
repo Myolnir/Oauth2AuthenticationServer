@@ -1,0 +1,75 @@
+server:
+    port: 10000
+
+authorization:
+  server:
+    client: confidential
+    secret: secret
+  redirectionUrl: "http://localhost:10000"
+
+#
+# IMPORTANT NOTICE:
+# You have to replace this keypair and make sure the private key remains private!
+#
+config:
+    oauth2:
+        # openssl genrsa -out jwt.pem 2048
+        # openssl rsa -in jwt.pem
+        privateKey: |
+            -----BEGIN RSA PRIVATE KEY-----
+            MIIEowIBAAKCAQEA5JFA0nIPLCnALci3qqhMmSGjMTRMRQbcpKsI3MYLjk5luVI9
+            0VQpnSHJih251pwQmDMo/MDu9qvzAKmQl0d97Q1nXUxkluTosL7jmynxNqO/NtRq
+            vA4SQLv1IlqurvTYJgGF+xK2UxVTin0dlxg3dw9neQmTb37u9XE5Y8X5kE0HnCeF
+            E6glpmTHIpHK0TH/uyxdyTBYifqPlWOW3U3IAX/OF7SLGdcCAxiEJj53J/NvEh+i
+            M0Tsq8TKZeMTiR0DY1EBCPf8mqTEEVUnSk2+2kuCb/P0G5zbHML8SmPj7+UTf9MD
+            X44sEptJkrdmH60CJ02pCokeT5214FG/sLVj7QIDAQABAoIBAELanYwwYnG3cIez
+            us0G1wi/Rv1gX6KdBDKB+GCi6MRh9+0BuiUdKeLU/B8S3MWB9nSeGjH7uKmb18Ls
+            1eb5uUJ59i7a5l0gbVMtMmOzG+Owd4BxFxsUPpCCqYu33Ho+EW7kaSzr5zpb9Yh/
+            WgVUxvxjHA/SFja5eOl/iZq+UGW9JIlfE5PKSozzixZ2E11dXm7OxAtgohFQHobZ
+            7XCN8ChbbX2PZ8HCK1mGWyZ13KOHMiCQ/EAKn8m7oxNrs1EYr//N2D/2hmhc+3cc
+            NMKngoUzQKZ1BLaMytzamOW5sijI4+NRNaWstU6qFwRqoXxK7e2hENZgzQAFdNEf
+            xqVCbgECgYEA/Ax1vxlZ7RD3ovk+3gI+F7ZzI6Tjh9nqRLjDLZ9lZy8WLJ8QuGjk
+            5LgbKj3tP0JYxoUH3mryVqmuKeJ4dXMN51LY1Jvm/uGJcWRSzM/6HG/k5pdy62pz
+            HuQ3dpmNWqJiATtYIfBy+qIHhZ+Vd3Lx68gqErhPjauT0pQ7+zmlu20CgYEA6CaO
+            drRypgzwI491wcXm1acyUWQIr5hUWeLv+caCiaFrRoLfBWJaair0hygFG4M1HMTE
+            lF9NJx4gxBOgKSqxOTK6EN0131QttwX1ClLYlIDyaOn9ciXnn3xhuYe5Rv1DAyWg
+            /vaWPtD+h1oQPQdnruCI4LqO4mbd+qkYDeBgeoECgYA4z8YqkNhIKy7mOTAGcpL0
+            XVeOjTgMAv5fBxZXTjpZC6//1sq6Bkqxkx3sY5D6VUYVWR7w70I4bn6nSjjEoG5d
+            2bquEYX7pXKJcIeJSsehaUc7AqAQmCniqKYnwWyvJTLZ/DpdTAlenO79G39hMTN+
+            Zdu15H1p/WaQbIEom1HT8QKBgQDEhM8YoYxkEJPAJpMyo4rS1iR8TcgkjTjqlnc6
+            49ZhF6ouGF8eubF8KjyxpSkdryZo4hDe4QX41UI7ebmc360ClHR6DiiqkyHXy00x
+            ngwFOlr6gQmxdXDry2kWm1Q2SfJOWa495xQsvNKaVZ1lbD1TBnQYeRS3hwjmRfo8
+            1PIXAQKBgHsfrEbFQKvIfRu05yqdPCvKvau93/PLVkRwp4pxNAVPnCADHN6maG8O
+            u0WSe6aFrEPOHTS1YkBm2RI6p979jmgBcWovpNK7iNsQdUss7Wge7Cu3UtVbMXkJ
+            SGbI0K/L40Bvgvv44ziGf56Z3vQjxlQyQH/r+JWg+vBq0C/ob+Uo
+            -----END RSA PRIVATE KEY-----
+
+        # openssl rsa -in jwt.pem -pubout
+        publicKey: |
+            -----BEGIN PUBLIC KEY-----
+            MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5JFA0nIPLCnALci3qqhM
+            mSGjMTRMRQbcpKsI3MYLjk5luVI90VQpnSHJih251pwQmDMo/MDu9qvzAKmQl0d9
+            7Q1nXUxkluTosL7jmynxNqO/NtRqvA4SQLv1IlqurvTYJgGF+xK2UxVTin0dlxg3
+            dw9neQmTb37u9XE5Y8X5kE0HnCeFE6glpmTHIpHK0TH/uyxdyTBYifqPlWOW3U3I
+            AX/OF7SLGdcCAxiEJj53J/NvEh+iM0Tsq8TKZeMTiR0DY1EBCPf8mqTEEVUnSk2+
+            2kuCb/P0G5zbHML8SmPj7+UTf9MDX44sEptJkrdmH60CJ02pCokeT5214FG/sLVj
+            7QIDAQAB
+            -----END PUBLIC KEY-----
+
+
+#DATABASE CONFIG. Url, user and password are mock
+
+spring:
+    datasource:
+        driverClassName: com.mysql.jdbc.Driver
+        password: password
+        username: username
+        url: jdbc:mysql://localhost:3308/database
+        maxActive: 10
+    jpa:
+        hibernate:
+          naming:
+            implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+            physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+          ddl-auto: validate
+        database-platform: org.hibernate.dialect.MySQL5Dialect
