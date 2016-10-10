@@ -7,10 +7,10 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 @SpringBootApplication
 //@EnableOAuth2Sso
-public class Oauth2AuthenticationServerApplication extends SpringBootServletInitializer  {
+public class Oauth2AuthorizationServerApplication extends SpringBootServletInitializer  {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Oauth2AuthenticationServerApplication.class, args);
+		SpringApplication.run(com.myolnir.Oauth2AuthorizationServerApplication.class, args);
 	}
 
 	/**
@@ -21,6 +21,6 @@ public class Oauth2AuthenticationServerApplication extends SpringBootServletInit
 	 */
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(Oauth2AuthenticationServerApplication.class);
+		return application.sources(com.myolnir.Oauth2AuthorizationServerApplication.class);
 	}
 }
