@@ -117,7 +117,7 @@ public class OAuth2Configuration extends AuthorizationServerConfigurerAdapter{
 
                 // Which authenticationManager should be used for the password grant
                 // If not provided, ResourceOwnerPasswordTokenGranter is not configured
-                //.authenticationManager(authenticationManager)
+                .authenticationManager(authenticationManager)
                 //
                 .approvalStore(approvalStore())
                 .authorizationCodeServices(authorizationCodeServices())
@@ -151,7 +151,7 @@ public class OAuth2Configuration extends AuthorizationServerConfigurerAdapter{
                 .and()
 
                 // Trusted client: similar to confidential client but also allowed to handle user password
-                .withClient(client).secret(secret)
+                .withClient("password").secret(secret)
                 .authorities("ROLE_TRUSTED_CLIENT", "ROLE_CLIENT", "ADMIN", "ROLE_ANONYMOUS")
                 .authorizedGrantTypes("client_credentials", "password", "authorization_code", "refresh_token")
                 .scopes("read", "write", "trust")
